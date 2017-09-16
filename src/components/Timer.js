@@ -1,15 +1,11 @@
 import React, {Component} from 'react';
 
-//styles
-var styles = {
-    textAlign : 'center'
-}
-
 export class Timer extends Component {
 
     constructor(props) {
         super(props);
         this.state = {time : props.startTime};
+        this.getStyles = this.getStyles.bind(this);
     };
 
     componentDidMount(){
@@ -22,9 +18,19 @@ export class Timer extends Component {
         }
     };
 
+    getStyles(){
+        let styleObj;
+        if(this.state.time > 5){
+            styleObj = {textAlign : 'center', color : 'black'};
+        }else{
+            styleObj = {textAlign : 'center', color : 'red'};
+        }
+        return styleObj
+    }
+
     render() {
         return(
-            <h1 style={styles}>{this.state.time}</h1>
+            <h1 style={this.getStyles()}>{this.state.time}</h1>
         );
     }
 }
