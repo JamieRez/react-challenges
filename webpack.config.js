@@ -51,7 +51,7 @@ module.exports = {
   entry: [
     'webpack-dev-server/client?http://localhost:5000',
     'webpack/hot/dev-server',
-    './scripts/index'
+    './src/index'
   ],
   output: {
     path: __dirname,
@@ -70,8 +70,10 @@ module.exports = {
     loaders: [
       {
         test: /\.jsx?$/,
+        target : 'node',
+        exclude : /node_modules/,
         loaders: ['babel'],
-        include: path.join(__dirname, 'scripts')
+        include: path.join(__dirname, 'src'),
       }
     ]
   }
