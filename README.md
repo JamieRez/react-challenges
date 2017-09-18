@@ -1,5 +1,5 @@
 # My Answers to the MakeSchool React Challenges
-np
+
 # React-Intro-Challenges
 
 React Intro challenges starter project.
